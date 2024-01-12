@@ -1,5 +1,4 @@
-name: Hello World Training Workflow
-
+name: Workflow 001
 on:
   workflow_dispatch:
 
@@ -8,4 +7,4 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Greet the User
-        run: echo "Hello World!"
+        run: echo "Vinod Shalagar Here!"
