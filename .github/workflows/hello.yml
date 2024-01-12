@@ -8,3 +8,8 @@ jobs:
     steps:
       - name: Greet the User
         run: echo "Vinod Shalagar Here!"
+      - run: ls -1
+      - uses: actions/checkout@v2
+      - run: ls -1
+      
+
