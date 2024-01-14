@@ -10,7 +10,7 @@ jobs:
         run: echo "Vinod Shalagar Here!"
       
       - run: ls -1
-      - uses: actions/checkout@v3
+      # - uses: actions/checkout@v3
       - run: ls -1
       - run: echo "shalgar vinod"
       - run: echo "rajshree shalgar"
