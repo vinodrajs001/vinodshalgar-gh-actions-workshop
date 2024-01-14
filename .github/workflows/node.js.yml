@@ -55,15 +55,15 @@ jobs:
             type=ref,event=tag
             type=ref,event=pr
             type=sha,event=branch,prefix=,suffix=,format=short
+            
       - name: Build and Push Docker Image
         uses: docker/build-push-action@v2
         with:
           push: true
-          tags: "vinodshalgar"
-          labels: ${{ steps.meta.output.labels }}
-          catche-from: type=gha
+          tags: ${{ steps.meta.outputs.tags }}
+          labels: ${{ steps.meta.outputs.labels }}
+          cache-from: type=gha
           cache-to: type=gha,mode=max
-      
       
   
       
