@@ -1,3 +1,5 @@
+[![Node.js CI](https://github.com/vinodrajs001/vinodshalgar-gh-actions-workshop/actions/workflows/node.js.yml/badge.svg)](https://github.com/vinodrajs001/vinodshalgar-gh-actions-workshop/actions/workflows/node.js.yml)
+
 # GitHub Actions Workshop by GitHub
 
 > *Lift-off with GitHub Actions - it's not rocket-science (unless you use it for rockets).* 🚀
