@@ -6,6 +6,9 @@ jobs:
   greet:
     env:
         MY_ENV: "vinod shalgar"
+        FNAME: "VINOD"
+        LNAME: "SHALGAR"
+        MNAME: "N"
     runs-on: ubuntu-latest
     steps:
       - name: Greet the User
@@ -22,5 +25,6 @@ jobs:
           echo "tsting multiple name is $MY_ENV"
           echo "tsting multiple name1 is $MY_ENV"
           echo "tsting multiple name is $GITHUB_ACTOR"
+          echo "my full  name is $FNAME $MNAME $LNAME"
       
 
