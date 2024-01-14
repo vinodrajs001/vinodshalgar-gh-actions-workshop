@@ -21,9 +21,49 @@ jobs:
           node-version: 16.x
           cache: 'npm'
       - run: npm ci
-      - run: npm run build
-      - run: npm run test
+      - run: npm run build --if-present
+      - run: npm test
       - name: 'Report Coverage'
         uses: davelosert/vitest-coverage-report-action@v2.1.1
         if: always()
+  package-and-publish:
+    needs:
+      - build
+    name: Package & Publish
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      packages: write
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Docker Buildx
+        uses: docker/setup-buildx-actions@v2
+      - name: Sign In to GitHub Container Registry
+        uses: docker/login-action@v2
+        with:
+          username: ${{ github.actor}}
+          password: ${{ secrets.GITHUB_TOKE }}
+          registry: ghcr.io
+      - name: Generate Docker Metadata
+        id: meta
+        uses: docker/metadata-action@v4
+        with:
+          images: ghcr.io/${{ github.repository }}
+          tags:
+            type=ref,event=tag
+            type=ref,event=pr
+            type=sha,event=branch,prefix=,suffix=,format=short
+      - name: Build and Push Docker Image
+        uses: docket/build-push-action@v2
+        with:
+          push: true
+          tags: ${{ steps.meta.output.tags }}
+          labels: ${{ steps.meta.output.labels }}
+          catche-from: type=gha
+          cache-to: type=gha,mode=max
+      
+      
+  
       
