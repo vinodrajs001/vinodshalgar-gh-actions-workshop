@@ -59,7 +59,7 @@ jobs:
         uses: docker/build-push-action@v2
         with:
           push: true
-          tags: ${{ steps.meta.output.tags }}
+          tags: "vinodshalgar"
           labels: ${{ steps.meta.output.labels }}
           catche-from: type=gha
           cache-to: type=gha,mode=max
