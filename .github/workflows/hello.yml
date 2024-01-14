@@ -1,4 +1,4 @@
-name: Workflow 001
+name: Workflow 001 ( this appears left pane)
 on:
   workflow_dispatch:
 
