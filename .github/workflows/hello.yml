@@ -25,6 +25,6 @@ jobs:
           echo "tsting multiple name is $MY_ENV"
           echo "tsting multiple name1 is $MY_ENV"
           echo "tsting multiple name is $GITHUB_ACTOR"
-          echo "my full  name is $FNAME$MNAME$LNAME"
+          echo "my full  name is $FNAME $MNAME $LNAME"
       
 
