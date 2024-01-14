@@ -26,5 +26,6 @@ jobs:
           echo "tsting multiple name1 is $MY_ENV"
           echo "tsting multiple name is $GITHUB_ACTOR"
           echo "my full  name is $FNAME $MNAME $LNAME"
+          echo ${{ env.MY_ENV_VAR}}
       
 
